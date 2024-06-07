@@ -1,4 +1,3 @@
-// src/Coloria.h
 #ifndef COLORIA_H
 #define COLORIA_H
 
@@ -71,4 +70,4 @@ namespace Coloria {
     void printlnAligned(const char* color, const char* message, const char* alignment, int width);
 }
 
-#endif // COLORIA_H
+#endif // End of Coloria.h

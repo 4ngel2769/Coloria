@@ -1,4 +1,3 @@
-// src/Coloria.cpp
 #include "Coloria.h"
 
 namespace Coloria {
@@ -80,6 +79,7 @@ namespace Coloria {
             Serial.print(message);
             Serial.print(RESET);
         } else {
+            // Text starts on the left by default
             Serial.print(color);
             Serial.print(message);
             Serial.print(RESET);
@@ -92,3 +92,5 @@ namespace Coloria {
         Serial.println();
     }
 }
+
+// End of Coloria.cpp
