@@ -14,11 +14,12 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Run Arduino Lint
       uses: arduino/arduino-lint-action@v1.0.2
       with:
         path: ./src
-        additional-arduino-lint-args: --warnings all --extensions h,cpp,ino
-        
+        compliance: arduino
+        project-type: library
+        verbose: true
