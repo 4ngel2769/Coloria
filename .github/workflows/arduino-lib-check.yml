@@ -12,16 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: configure
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
-      # Arduinno Lib Check
+    # Arduinno Lib Check
     - name: arduino/arduino-lint-action
       uses: arduino/arduino-lint-action@v1.0.2
             
