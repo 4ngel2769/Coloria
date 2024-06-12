@@ -11,19 +11,14 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Run Arduino Lint
-        uses: arduino/arduino-lint-action@v1.0.2
-        with:
-          # fqbn: arduino:avr:uno  # Fully Qualified Board Name (you can change it to your specific board)
-          path: .                # Path to your library
-
-      - name: Upload Lint Report
-        if: failure()
-        uses: actions/upload-artifact@v2
-        with:
-          name: lint-report
-          path: arduino_lint_report.xml
+    - name: Run Arduino Lint
+      uses: arduino/arduino-lint-action@v1.0.2
+      with:
+        path: ./src
+        additional-arduino-lint-args: --warnings all --extensions h,cpp,ino
+        
