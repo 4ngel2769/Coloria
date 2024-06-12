@@ -54,9 +54,41 @@ namespace Coloria {
     const char* const BG_BRIGHT_WHITE = "\033[107m";
 
     // Color presets
+    const char* const BOLD_BLACK = "\033[1;30m";
     const char* const BOLD_RED = "\033[1;31m";
+    const char* const BOLD_GREEN = "\033[1;32m";
+    const char* const BOLD_YELLOW = "\033[1;33m";
+    const char* const BOLD_BLUE = "\033[1;34m";
+    const char* const BOLD_MAGENTA = "\033[1;35m";
+    const char* const BOLD_CYAN = "\033[1;36m";
+    const char* const BOLD_WHITE = "\033[1;37m";
+
+    const char* const UNDERLINE_BLACK = "\033[4;30m";
+    const char* const UNDERLINE_RED = "\033[4;31m";
     const char* const UNDERLINE_GREEN = "\033[4;32m";
+    const char* const UNDERLINE_YELLOW = "\033[4;33m";
+    const char* const UNDERLINE_BLUE = "\033[4;34m";
+    const char* const UNDERLINE_MAGENTA = "\033[4;35m";
+    const char* const UNDERLINE_CYAN = "\033[4;36m";
+    const char* const UNDERLINE_WHITE = "\033[4;37m";
+
+    const char* const BRIGHT_BOLD_BLACK = "\033[1;90m";
+    const char* const BRIGHT_BOLD_RED = "\033[1;91m";
+    const char* const BRIGHT_BOLD_GREEN = "\033[1;92m";
+    const char* const BRIGHT_BOLD_YELLOW = "\033[1;93m";
+    const char* const BRIGHT_BOLD_BLUE = "\033[1;94m";
+    const char* const BRIGHT_BOLD_MAGENTA = "\033[1;95m";
+    const char* const BRIGHT_BOLD_CYAN = "\033[1;96m";
+    const char* const BRIGHT_BOLD_WHITE = "\033[1;97m";
+
+    const char* const BOLD_UNDERLINE_BLACK = "\033[1;4;30m";
+    const char* const BOLD_UNDERLINE_RED = "\033[1;4;31m";
+    const char* const BOLD_UNDERLINE_GREEN = "\033[1;4;32m";
+    const char* const BOLD_UNDERLINE_YELLOW = "\033[1;4;33m";
     const char* const BOLD_UNDERLINE_BLUE = "\033[1;4;34m";
+    const char* const BOLD_UNDERLINE_MAGENTA = "\033[1;4;35m";
+    const char* const BOLD_UNDERLINE_CYAN = "\033[1;4;36m";
+    const char* const BOLD_UNDERLINE_WHITE = "\033[1;4;37m";
 
     // Function declarations
     String hexToAnsi(const char* hex, bool isBackground = false);
