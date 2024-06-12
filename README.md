@@ -31,7 +31,7 @@ Welcome to **Coloria** – the playful and powerful Arduino library for adding c
 ### Installation
 
 1. **Download the Library**:
-   - [Download Coloria v1.0.0](https://github.com/coffeeisle/Coloria/archive/v1.0.0.zip)
+   - [Download Coloria v1.0.0](https://github.com/4ngel2769/Coloria/archive/v1.0.0.zip)
 
 2. **Add the Library to Arduino IDE**:
    - Open Arduino IDE.
@@ -135,7 +135,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 Have questions or feedback? Reach out to us:
 
-- GitHub: [https://github.com/coffeeisle/Coloria](https://github.com/coffeeisle/Coloria)
+- GitHub: [https://github.com/4ngel2769/Coloria](https://github.com/4ngel2769/Coloria)
 - Email: [4ngel2769](mailto:angeldevz0@proton.me)
 
 ---
