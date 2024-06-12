@@ -64,6 +64,8 @@ void loop() {
     // Your loop implementation
 }
 ```
+The library features an example sketch available from the examples menu: `Examples > Coloria > ColoriaSerialPrint`
+
 
 ## 🎨 Color and Formatting Options
 
