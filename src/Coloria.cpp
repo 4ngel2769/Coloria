@@ -1,6 +1,12 @@
 #include "Coloria.h"
 
 namespace Coloria {
+    bool ansiEnabled = true;
+
+    void enableAnsi(bool enable) {
+        ansiEnabled = enable;
+    }
+
     String hexToAnsi(const char* hex, bool isBackground) {
         int r, g, b;
         if (sscanf(hex, "%02x%02x%02x", &r, &g, &b) != 3) {
@@ -16,43 +22,146 @@ namespace Coloria {
     }
 
     void print(const char* color, const char* message) {
-        Serial.print(color);
+        if (ansiEnabled) {
+            Serial.print(color);
+        }
         Serial.print(message);
-        Serial.print(RESET);
+        if (ansiEnabled) {
+            Serial.print(RESET);
+        }
     }
 
     void println(const char* color, const char* message) {
-        Serial.print(color);
+        if (ansiEnabled) {
+            Serial.print(color);
+        }
         Serial.println(message);
-        Serial.print(RESET);
+        if (ansiEnabled) {
+            Serial.print(RESET);
+        }
     }
 
     void print(const char* color, const char* formatting, const char* message) {
-        Serial.print(color);
-        Serial.print(formatting);
+        if (ansiEnabled) {
+            Serial.print(color);
+            Serial.print(formatting);
+        }
         Serial.print(message);
-        Serial.print(RESET);
+        if (ansiEnabled) {
+            Serial.print(RESET);
+        }
     }
 
     void println(const char* color, const char* formatting, const char* message) {
-        Serial.print(color);
-        Serial.print(formatting);
+        if (ansiEnabled) {
+            Serial.print(color);
+            Serial.print(formatting);
+        }
         Serial.println(message);
-        Serial.print(RESET);
+        if (ansiEnabled) {
+            Serial.print(RESET);
+        }
     }
 
     void printHex(const char* hex, const char* message, bool isBackground) {
-        String ansiCode = hexToAnsi(hex, isBackground);
-        Serial.print(ansiCode.c_str());
+        if (ansiEnabled) {
+            String ansiCode = hexToAnsi(hex, isBackground);
+            Serial.print(ansiCode.c_str());
+        }
         Serial.print(message);
-        Serial.print(RESET);
+        if (ansiEnabled) {
+            Serial.print(RESET);
+        }
     }
 
     void printlnHex(const char* hex, const char* message, bool isBackground) {
-        String ansiCode = hexToAnsi(hex, isBackground);
-        Serial.print(ansiCode.c_str());
+        if (ansiEnabled) {
+            String ansiCode = hexTo```cpp
+#include "Coloria.h"
+
+namespace Coloria {
+    bool ansiEnabled = true;
+
+    void enableAnsi(bool enable) {
+        ansiEnabled = enable;
+    }
+
+    String hexToAnsi(const char* hex, bool isBackground) {
+        int r, g, b;
+        if (sscanf(hex, "%02x%02x%02x", &r, &g, &b) != 3) {
+            return String(RESET); // Return reset if the hex code is invalid
+        }
+        char ansiCode[16];
+        if (isBackground) {
+            snprintf(ansiCode, sizeof(ansiCode), "\033[48;2;%d;%d;%d", r, g, b);
+        } else {
+            snprintf(ansiCode, sizeof(ansiCode), "\033[38;2;%d;%d;%d", r, g, b);
+        }
+        return String(ansiCode);
+    }
+
+    void print(const char* color, const char* message) {
+        if (ansiEnabled) {
+            Serial.print(color);
+        }
+        Serial.print(message);
+        if (ansiEnabled) {
+            Serial.print(RESET);
+        }
+    }
+
+    void println(const char* color, const char* message) {
+        if (ansiEnabled) {
+            Serial.print(color);
+        }
         Serial.println(message);
-        Serial.print(RESET);
+        if (ansiEnabled) {
+            Serial.print(RESET);
+        }
+    }
+
+    void print(const char* color, const char* formatting, const char* message) {
+        if (ansiEnabled) {
+            Serial.print(color);
+            Serial.print(formatting);
+        }
+        Serial.print(message);
+        if (ansiEnabled) {
+            Serial.print(RESET);
+        }
+    }
+
+    void println(const char* color, const char* formatting, const char* message) {
+        if (ansiEnabled) {
+            Serial.print(color);
+            Serial.print(formatting);
+        }
+        Serial.println(message);
+        if (ansiEnabled) {
+            Serial.print(RESET);
+        }
+    }
+
+    void printHex(const char* hex, const char* message, bool isBackground) {
+        if (ansiEnabled) {
+            String ansiCode = hexToAnsi(hex, isBackground);
+            Serial.print(ansiCode.c_str());
+        }
+        Serial.print(message);
+        if (ansiEnabled) {
+            Serial.print(RESET);
+        }
+    }
+
+    void printlnHex(const char* hex, const char* message, bool isBackground) {
+        if (ansiEnabled) {
+            String ansiCode = hexToAnsi(hex, isBackground);
+            Serial.print(ansiCode.c_str());
+        }
+        Serial.println(message);
+        if (ansiEnabled) {
+            Serial.print(RESET);
+        }
     }
 
     void printAligned(const char* color, const char* message, const char* alignment, int width) {

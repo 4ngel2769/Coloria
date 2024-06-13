@@ -18,27 +18,41 @@
   This code is in the public domain.
 */
 
+// Colors will not appear in the Arduino Serial Monitor
+
 #include <Arduino.h>
-#include "ColoriaExample.h"
+#include <Coloria.h>
 
 void setup() {
-  // Initialize Coloria
-  Coloria colorPrinter;
+    Serial.begin(9600); // Set baud rate for Arduino boards
+    while (!Serial) {
+        // Wait for Serial to be ready
+    }
 
-  // Print text in various colors
-  colorPrinter.printColoredText("Hello, Red!", RED);
-  colorPrinter.printColoredText("Hello, Green!", GREEN);
-  colorPrinter.printColoredText("Hello, Blue!", BLUE);
-  colorPrinter.printColoredText("Hello, Yellow!", YELLOW);
-  colorPrinter.printColoredText("Hello, Cyan!", CYAN);
-  colorPrinter.printColoredText("Hello, Magenta!", MAGENTA);
+    // Disable ANSI for Arduino Serial Monitor
+    Coloria::enableAnsi(false);
 
-  // Print formatted text
-  colorPrinter.printFormattedText("Bold Text", BOLD);
-  colorPrinter.printFormattedText("Underlined Text", UNDERLINE);
-  colorPrinter.printFormattedText("Reversed Text", REVERSED);
+    // Print example messages
+    Coloria::println(Coloria::RED, "This is a red text.");
+    Coloria::println(Coloria::GREEN, "This is a green text.");
+    Coloria::println(Coloria::BLUE, "This is a blue text.");
+    Coloria::println(Coloria::YELLOW, "This is a yellow text.");
+    Coloria::println(Coloria::CYAN, "This is a cyan text.");
+    Coloria::println(Coloria::MAGENTA, "This is a magenta text.");
+
+    // Print with different formatting options
+    Coloria::println(Coloria::BOLD, "This is bold text.");
+    Coloria::println(Coloria::UNDERLINE, "This is underlined text.");
+    Coloria::println(Coloria::REVERSE, "This is reversed text.");
+
+    // Print with HEX color code
+    Coloria::printlnHex("FF5733", "This is a text with HEX color #FF5733.");
+    Coloria::printlnHex("00FF00", "This text has a green background.", true);
+
+    // Print aligned text
+    Coloria::printlnAligned(Coloria::BLUE, "This text is centered.", "center", 40);
 }
 
 void loop() {
-  // Nothing to do here
+    // Loop code here
 }

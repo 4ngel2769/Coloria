@@ -4,6 +4,11 @@
 #include <Arduino.h>
 
 namespace Coloria {
+    extern bool ansiEnabled;
+
+    // Enable or disable ANSI escape codes
+    void enableAnsi(bool enable);
+
     // Formatting codes
     const char* const RESET = "\033[0m";
     const char* const BOLD = "\033[1m";
